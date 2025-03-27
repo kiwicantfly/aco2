@@ -7,16 +7,19 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="only-phone">
+        Utilise ton tel stp
+    </div>
     <header>
         <img src="images/title.png"/>
     </header>
     <main>  
         <div id="welcome">Bienvenue à l'Absinthe Chill Out 2</div>
-        <c-window image="images/gif/gif1.webp"></c-window>
-        <c-window image="images/gif/gif2.gif" class="reverse"></c-window>
+        <c-window id="window1" numero="1" image="images/gif/gif1.webp"></c-window>
+        <c-window id="window2" numero="2" image="images/gif/gif2.gif" class="reverse"></c-window>
         <c-banner image="images/banners/banner1.png"></c-Banner>
-        <c-window></c-window>
-        <c-window class="reverse"></c-window>
+        <c-window id="window3" numero="3"></c-window>
+        <c-window id="window4" numero="4" class="reverse"></c-window>
         <c-banner image="images/banners/banner2.png"></c-Banner>
     </main>
     <script src="script.js"></script>
