@@ -1,0 +1,183 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fonts */
+@font-face {
+    font-family: pixel;
+    src: url(fonts/w95fa/W95FA.otf);
+}
+@font-face {
+    font-family: comicsansms;
+    src: url(fonts/ComicSansMS/ComicSansMS.ttf );
+}
+
+/* Variables */
+:root {
+    /* Colors */
+    --white: #ffffff/*#FFEDFA*/;
+    --black: #09122C;
+    --green: #3BFF00;
+    --blue-darker: #000084;
+    --blue:#2F00FF;
+    --grey: #C0C0C0;
+    --grey-darker: #777777;
+    /* Fonts */
+    --fs1: 1rem;
+    --fs2: 1.5rem;
+    --fs3: 0.6rem;
+    --ff1: pixel;
+    --ff2: comicsansms;
+    /* Space */
+    --spacing1: 30px;
+    --height-window: 24px;
+    --window-padding: 10px;
+    /* Border */
+    --border-width1: 1px;
+    --border-width2: 4px;
+}
+
+
+/* General */
+header {
+    height: 80px;
+    width: 100%;
+    /*position: sticky;
+    top: 0;
+    z-index: 1;*/
+    background-image: url(images/header.png);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    height: auto;
+    width: 100vw;
+    background-image: url(images/background.png);
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--spacing1) var(--spacing1);
+    gap: var(--spacing1);
+
+    overflow: scroll;
+}
+
+#welcome {
+    width: 100%;
+    text-align: center;
+    font-family: var(--ff2);
+    font-size: var(--fs2);
+    color: var(--green);
+    text-shadow: #444b5e 2px 2px;
+    animation-duration: 10s;	
+	animation-name: HorizontalScroll;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+@keyframes HorizontalScroll {
+	from {transform: translateX(100%) }
+	to {transform: translateX(-100%);}
+}
+
+/* Windows 95 */
+c-window {
+    width: 100%;
+    aspect-ratio: 1.8;
+    outline-offset: calc( (var(--border-width1) + var(--border-width2)) * -1);
+    outline: solid var(--grey) var(--border-width2);
+
+    border-right: solid var(--black) var(--border-width1);
+    border-bottom: solid var(--black) var(--border-width1);
+    border-top: solid var(--white) var(--border-width1);
+    border-left: solid var(--white) var(--border-width1);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--ff1);
+}
+c-window .top {
+    width: 100%;
+    color: var(--white);
+    height: var(--height-window);
+    background: linear-gradient(0.25turn, var(--blue-darker), var(--blue));
+    padding: var(--border-width2) var(--window-padding) 0 var(--window-padding);
+    display: flex;
+    align-items: center;
+}
+c-window .bottom {
+    color: var(--black);
+    width: 100%;
+    height: var(--height-window);
+    background-color: var(--grey);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    padding: 0 var(--border-width2);
+}
+c-window .bottom .bottom-box{
+    height: calc(100% - 2*var(--border-width2));
+    border-right: solid var(--white) var(--border-width1);
+    border-bottom: solid var(--white) var(--border-width1);
+    border-top: solid var(--grey-darker) var(--border-width1);
+    border-left: solid var(--grey-darker) var(--border-width1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--fs3);
+}
+c-window .bottom .bottom-left {
+    width: 40%;
+}  
+c-window .bottom .bottom-right {
+    width: 60%;   
+}
+c-window .content {
+    flex-grow: 1; 
+    width: calc(100% - 2*var(--border-width2));
+    background-color: var(--white);
+    padding: var(--window-padding);
+    border-right: solid var(--white) var(--border-width1);
+    border-bottom: solid var(--white) var(--border-width1);
+    border-top: solid var(--black) var(--border-width1);
+    border-left: solid var(--black) var(--border-width1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.reverse .content {
+    flex-direction: row-reverse;
+}
+c-window .content .content-image {
+    width: 25%;
+}
+c-window .content .content-image img{
+    width: 100%;
+    aspect-ratio: initial;
+}
+c-window .content .content-text {
+    width: 75%;
+}
+
+/* Bannner */
+c-banner {
+    width: 90%;
+    aspect-ratio: 4;
+    background-color: orange;
+}
+c-banner img {
+    width: 100%;
+    height: 100%;
+}
