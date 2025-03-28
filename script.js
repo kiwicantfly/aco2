@@ -34,6 +34,19 @@ class Banner extends HTMLElement {
 }
 customElements.define("c-banner", Banner);
 
+class Icon extends HTMLElement {
+    connectedCallback() {
+        const title = this.getAttribute("title");
+        const image = this.getAttribute("image");
+        this.innerHTML = `
+            
+            <img class="icon-image" style="object-fit: contain; width: 60%;" src="${image}"/>
+            <div class="icon-title">${title}</div>
+        `
+    }
+}
+customElements.define("c-icon", Icon);
+
 const closeButton = document.getElementsByClassName("close-button");
 Array.prototype.forEach.call(closeButton, button =>{
     const num = button.getAttribute("button-numero");

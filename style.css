@@ -29,6 +29,7 @@
     --fs1: 1rem;
     --fs2: 1.5rem;
     --fs3: 0.6rem;
+    --fs4: 0.75rem;
     --ff1: pixel;
     --ff2: comicsansms;
     /* Space */
@@ -61,6 +62,7 @@
 header {
     height: 80px;
     width: 100%;
+    scroll-behavior: scroll;
     /*position: sticky;
     top: 0;
     z-index: 1;*/
@@ -70,7 +72,23 @@ header {
     justify-content: center;
     align-items: center;
 }
+c-icon {
+    flex: 1;
+    aspect-ratio: 1;
+    /*border: solid 1px black;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    background-image: url(images/ellipse.png);
+    background-size: cover;
+}
 
+c-icon .icon-title {
+    color: var(--white);
+    font-family: var(--ff2);
+    font-size: var(--fs4);
+}
 main {
     height: 100vh;
     width: 100vw;
