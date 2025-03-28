@@ -3,9 +3,11 @@ class Window extends HTMLElement {
         const image = this.getAttribute("image");
         const numero = this.getAttribute("numero") || 0;
         this.innerHTML = `
-            <div class="top">
-                Enigme ${numero}
-                <button class="close-button" button-numero="${numero}">x</button>
+            <div class="top" style="text-align: right;">
+                <div>Enigme ${numero}</div>
+                <div style="flex: 1; display: flex; flex-direction: row-reverse; align-items: center">
+                    <button style="display: flex; justify-content: center; align-items: center" class="close-button" button-numero="${numero}">x</button>
+                </div>
             </div>
             <div class="content">
                 <div class="content-image">

@@ -82,8 +82,8 @@ main {
     align-items: center;
     padding: var(--spacing1) var(--spacing1);
     gap: var(--spacing1);
-
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 #welcome {
@@ -93,7 +93,7 @@ main {
     font-size: var(--fs2);
     color: var(--green);
     text-shadow: #444b5e 2px 2px;
-    animation-duration: 10s;	
+    animation-duration: 6s;	
 	animation-name: HorizontalScroll;
 	animation-iteration-count: infinite;
 	animation-timing-function: linear;
@@ -102,8 +102,8 @@ main {
 }
 
 @keyframes HorizontalScroll {
-	from {transform: translateX(50%) }
-	to {transform: translateX(-50);}
+	from {transform: translateX(100%) }
+	to {transform: translateX(-100%);}
 }
 
 /* Windows 95 */
@@ -185,6 +185,13 @@ c-window .content .content-image img{
 }
 c-window .content .content-text {
     width: 75%;
+}
+c-window .close-button {
+    height: 16px;
+    aspect-ratio: 1;
+    border-radius: 0;
+    font-family: var(--ff1);
+    font-size: var(--fs1);
 }
 
 /* Bannner */
