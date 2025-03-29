@@ -1,4 +1,7 @@
 class Window extends HTMLElement {
+    close(){
+        this.style.display = 'none';
+    };
     connectedCallback() {
         const image = this.getAttribute("image");
         const numero = this.getAttribute("numero") || 0;
@@ -6,7 +9,7 @@ class Window extends HTMLElement {
             <div class="top" style="text-align: right;">
                 <div>Enigme ${numero}</div>
                 <div style="flex: 1; display: flex; flex-direction: row-reverse; align-items: center">
-                    <button style="display: flex; justify-content: center; align-items: center" class="close-button" button-numero="${numero}">x</button>
+                    <button style="display: flex; justify-content: center; align-items: center" class="close-button">x</button>
                 </div>
             </div>
             <div class="content">
@@ -20,7 +23,12 @@ class Window extends HTMLElement {
                 <div class="bottom-box bottom-right">ACO2 Web Services by Jafar T.</div>
             </div>
         `;
+        const close = this.querySelector(".close-button");
+        close.addEventListener("click", () => {
+            this.close();
+          });
     };
+
 };
 customElements.define("c-window", Window);
 
@@ -46,12 +54,3 @@ class Icon extends HTMLElement {
     }
 }
 customElements.define("c-icon", Icon);
-
-const closeButton = document.getElementsByClassName("close-button");
-Array.prototype.forEach.call(closeButton, button =>{
-    const num = button.getAttribute("button-numero");
-    button.addEventListener("click", function (e) {
-        const win = document.getElementById(`window${num}`);
-        win.style.display = 'none';
-      });
-});
