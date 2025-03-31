@@ -1,7 +1,4 @@
 class Window extends HTMLElement {
-    close(){
-        this.style.display = 'none';
-    };
     connectedCallback() {
         const image = this.getAttribute("image");
         const numero = this.getAttribute("numero") || 0;
@@ -23,10 +20,15 @@ class Window extends HTMLElement {
                 <div class="bottom-box bottom-right">ACO2 Web Services by Jafar T.</div>
             </div>
         `;
-        const close = this.querySelector(".close-button");
-        close.addEventListener("click", () => {
+        const closeButton = this.querySelector(".close-button");
+        closeButton.addEventListener("click", () => {
             this.close();
           });
+    };
+    close(){
+        this.style.display = 'none';
+    };          close(){
+        this.style.display = 'none';
     };
 
 };
