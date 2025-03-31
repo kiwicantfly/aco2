@@ -6,13 +6,16 @@ class Window extends HTMLElement {
             <div class="top" style="text-align: right;">
                 <div>Enigme ${numero}</div>
                 <div style="flex: 1; display: flex; flex-direction: row-reverse; align-items: center">
-                    <button style="display: flex; justify-content: center; align-items: center" class="close-button">x</button>
+                    <button style="display: flex; justify-content: center; align-items: center" class="close-button"><span style="font-family: monospace">×</span></button>
                 </div>
             </div>
             <div class="content">
                 <div class="content-image">
                     <img src="${image}"/>
                 </div>
+                <div class="content-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+            </div>
+            <div class="content" style="padding-top: 0; border-top: none; border-left: solid black 1px;">
                 <div class="content-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
             </div>
             <div class="bottom">
