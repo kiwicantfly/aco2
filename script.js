@@ -53,9 +53,7 @@ class Window extends HTMLElement {
     };
     close(){
         this.style.display = 'none';
-    };          close(){
-        this.style.display = 'none';
-    };
+    };          
 
 };
 customElements.define("c-window", Window);
@@ -87,9 +85,16 @@ customElements.define("c-icon", Icon);
 class Popup extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
-        
-        `
-    }
+            <button style="display: flex; justify-content: center; align-items: center" class="close-button"><span style="font-family: monospace">×</span></button>
+        `;
+        const closeButton = this.querySelector(".close-button");
+        closeButton.addEventListener("click", () => {
+            this.close();
+          });
+    };
+    close(){
+        this.style.display = 'none';
+    };
 }
 customElements.define("c-popup", Popup);
 
@@ -102,10 +107,10 @@ const shuffle = (array) => {
   }; 
 
 
-const suffleEnigmes = shuffle(enigmePersonne);
 
 /*Remplissage aléatoire */
 const main = document.getElementById("main");
+const suffleEnigmes = shuffle(enigmePersonne);
 for (let i=0; i<4; i++) {
     main.innerHTML += `
         <c-banner image="images/banners/banner${i+1}.png"></c-Banner>
@@ -113,3 +118,25 @@ for (let i=0; i<4; i++) {
         <c-window id="window${2*(i+1)}" numero="${2*(i+1)}" class="reverse" enigme-personne-content="${suffleEnigmes[2*i+1]}"></c-window>
     `
 }
+main.innerHTML += `<p>Merci Paolo pour ton idée de génie.</p>`;
+
+
+/* Apparition des popup toutes les 30s */
+const couleurs = ['green', 'blue', 'red'];
+const shuffleCouleurs = shuffle(couleurs);
+const popup = document.getElementById("popup");
+
+for (let i=0; i<3; i++) {
+    setTimeout(()=>{
+        popup.style.animationName = 'Disparition';
+        setTimeout(
+            ()=>{
+                popup.style.display = 'block';
+                popup.style.backgroundColor = shuffleCouleurs[i];
+                popup.style.animationName = 'Apparition';
+            },
+            500
+        )
+        console.log(shuffleCouleurs[i]);
+    }, 20000*i+5000);
+};

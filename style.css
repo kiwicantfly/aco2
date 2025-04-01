@@ -61,18 +61,21 @@
 
 
 /* General */
+body {
+    overflow-y: scroll;
+}
 header {
     height: 80px;
     width: 100%;
     scroll-behavior: scroll;
-    position: sticky;
-    top: 0;
-    z-index: 1;
     background-image: url(images/header.png);
     background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+footer {
+    scroll-behavior: scroll;
 }
 c-icon {
     flex: 1;
@@ -92,7 +95,7 @@ c-icon .icon-title {
     font-size: var(--fs4);
 }
 main {
-    height: 100vh;
+    height: 100%;
     width: 100vw;
     background-image: url(images/background.png);
     background-size: cover;
@@ -102,7 +105,6 @@ main {
     align-items: center;
     padding: var(--spacing1) var(--spacing1);
     gap: var(--spacing1);
-    overflow-y: scroll;
     overflow-x: hidden;
 }
 
@@ -224,3 +226,41 @@ c-banner img {
     width: 100%;
     height: 100%;
 }
+
+
+/* Pop up */
+c-popup {
+    display: none;
+    width: 50%;
+    aspect-ratio: 1.66;
+    background-color: purple;
+    position: fixed;
+    z-index: 1;
+    right: 0;
+    margin-right: 20px;
+    animation-duration: 0.5s;	
+	animation-name: Apparition;
+	animation-iteration-count: 1;
+	animation-timing-function: ease;
+}
+
+
+@keyframes Apparition {
+    0% {
+      transform: translateX(500px);
+    }
+
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+@keyframes Disparition {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(500px);
+    }
+  }
