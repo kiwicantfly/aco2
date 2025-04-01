@@ -1,8 +1,8 @@
 const enigmePersonne0 = {
-    "Jason":"Non c'est pas moi le blond, c'est l'autre",
+    "Jason":"Non c'est pas moi le blond, c'est l'autre.",
     "Amélie":"À cause du rouge et du livre, j'ai confondu avec le BDA...",
-    "Simon":"Tu peux m'appeler Bob",
-    "Sarah":"Je suis pas en cosplay, je m'habille juste comme ça",
+    "Simon":"Tu peux m'appeler Bob.",
+    "Sarah":"Je suis pas en cosplay, je m'habille juste comme ça.",
     "Anna":"Oui j'ai encore changé de couleur de cheveux...",
     "Hugo":"Boire n'est pas qu'une passion, c'est une profession.",
     "Nathan B":"J'ai toujours été friendly surtout avec mes potes… Tard dans la nuit colorée, la situation peut vite déraper",
@@ -10,13 +10,13 @@ const enigmePersonne0 = {
 }
 
 const enigmePersonne = [
-    ["Non c'est pas moi le blond, c'est l'autre", "fred.png"],
-    ["À cause du rouge et du livre, j'ai confondu avec le BDA...", "bob.jpg"],
-    ["Tu peux m'appeler Bob", "bob.jpg"],
-    ["Je suis pas en cosplay, je m'habille juste comme ça", "bob.jpg"],
+    ["Non c'est pas moi le blond, c'est l'autre.", "fred.png"],
+    ["À cause du rouge et du livre, j'ai confondu avec le BDA...", "bda.png"],
+    ["Tu peux m'appeler Bob.", "bob.jpg"],
+    ["Je suis pas en cosplay, je m'habille juste comme ça.", "cosplay.png"],
     ["Oui j'ai encore changé de couleur de cheveux...", "rainbow.png"],
     ["Boire n'est pas qu'une passion, c'est une profession.", "boire.png"],
-    ["J'ai toujours été friendly surtout avec mes potes… Tard dans la nuit colorée, la situation peut vite déraper", "nuit.jpg"],
+    ["J'ai toujours été friendly surtout avec mes potes… Tard dans la nuit colorée, la situation peut vite déraper.", "nuit.jpg"],
     ["Parler ? C'est plus qu'un soft skill, c'est une philosophie de vivre.", "philo.png"]
 ]
 
