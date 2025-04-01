@@ -122,7 +122,8 @@ main.innerHTML += `<p>Merci Paolo pour ton idée de génie.</p>`;
 
 
 /* Apparition des popup toutes les 20s */
-const popupImages = ['pill.png', 'virus.png'];
+const popupImagesInitial = ['pill.png', 'virus.png', 'winner.png'];
+const popupImages = shuffle(popupImagesInitial);
 const popup = document.getElementById("popup");
 
 for (let i=0; i<popupImages.length; i++) {
@@ -136,5 +137,5 @@ for (let i=0; i<popupImages.length; i++) {
             },
             500
         )
-    }, 20000*i+10000);
+    }, 30000*i+10000);
 };
