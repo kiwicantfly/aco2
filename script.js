@@ -113,11 +113,12 @@ const main = document.getElementById("main");
 const suffleEnigmes = shuffle(enigmePersonne);
 for (let i=0; i<4; i++) {
     main.innerHTML += `
-        <c-banner image="images/banners/banner${i+1}.png"></c-Banner>
+        <c-banner image="images/banners/banner${i+1}.png"></c-banner>
         <c-window id="window${2*i+1}" numero="${2*i+1}" enigme-personne-content="${suffleEnigmes[2*i][0]}" image="images/people/${suffleEnigmes[2*i][1]}"></c-window>
         <c-window id="window${2*(i+1)}" numero="${2*(i+1)}" class="reverse" enigme-personne-content="${suffleEnigmes[2*i+1][0]}" image="images/people/${suffleEnigmes[2*i+1][1]}"></c-window>
     `
 }
+main.innerHTML += `<c-banner image="images/banners/banner5.png"></c-Banner>`;
 main.innerHTML += `<p>Merci Paolo pour ton idée de génie.</p>`;
 
 

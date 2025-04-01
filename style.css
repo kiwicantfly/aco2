@@ -234,7 +234,7 @@ c-banner img {
 /* Pop up */
 c-popup {
     display: none;
-    width: 50%;
+    width: 60%;
     aspect-ratio: 1.5;
     background-image: url(images/popup/pill.png);
     background-size: contain;
