@@ -183,6 +183,7 @@ c-window .bottom .bottom-right {
     width: 60%;   
 }
 c-window .content {
+    gap: 10px;
     flex-grow: 1; 
     width: calc(100% - 2*var(--border-width2));
     background-color: var(--white);
@@ -192,7 +193,7 @@ c-window .content {
     border-top: solid var(--black) var(--border-width1);
     border-left: solid var(--black) var(--border-width1);
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 .reverse .content {
@@ -203,10 +204,12 @@ c-window .content .content-image {
 }
 c-window .content .content-image img{
     width: 100%;
+    max-height: 80px;
     aspect-ratio: initial;
 }
 c-window .content .content-text {
     width: auto;
+    text-align: left;
 }
 c-window .close-button {
     height: 16px;
@@ -232,8 +235,9 @@ c-banner img {
 c-popup {
     display: none;
     width: 50%;
-    aspect-ratio: 1.66;
-    background-color: purple;
+    aspect-ratio: 1.5;
+    background-image: url(images/popup/pill.png);
+    background-size: contain;
     position: fixed;
     z-index: 1;
     right: 0;
@@ -242,6 +246,7 @@ c-popup {
 	animation-name: Apparition;
 	animation-iteration-count: 1;
 	animation-timing-function: ease;
+    justify-content: flex-end;
 }
 
 
@@ -264,3 +269,11 @@ c-popup {
       transform: translateX(500px);
     }
   }
+c-popup .close-button {
+    height: 16px;
+    aspect-ratio: 1;
+    border: none;
+    font-family: var(--ff1);
+    font-size: var(--fs2);
+    background-color: rgb(0, 0, 0, 0);
+}
