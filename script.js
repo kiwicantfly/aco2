@@ -122,20 +122,19 @@ main.innerHTML += `<p>Merci Paolo pour ton idée de génie.</p>`;
 
 
 /* Apparition des popup toutes les 20s */
-const couleurs = ['green', 'blue', 'red'];
-const shuffleCouleurs = shuffle(couleurs);
+const popupImages = ['pill.png', 'virus.png'];
 const popup = document.getElementById("popup");
 
-for (let i=0; i<3; i++) {
+for (let i=0; i<popupImages.length; i++) {
     setTimeout(()=>{
         popup.style.animationName = 'Disparition';
         setTimeout(
             ()=>{
                 popup.style.display = 'flex';
-                popup.style.backgroundColor = shuffleCouleurs[i];
+                popup.style.backgroundImage = `url(images/popup/${popupImages[i]}`
                 popup.style.animationName = 'Apparition';
             },
             500
         )
-    }, 20000*i+5000);
+    }, 20000*i+10000);
 };
