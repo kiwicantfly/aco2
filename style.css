@@ -37,6 +37,7 @@
     --height-window: 24px;
     --window-padding: 10px;
     --content-padding: 20px;
+    --content-padding-top: 15px;
     /* Border */
     --border-width1: 1px;
     --border-width2: 4px;
@@ -183,7 +184,7 @@ c-window .content {
     flex-grow: 1; 
     width: calc(100% - 2*var(--border-width2));
     background-color: var(--white);
-    padding: var(--content-padding);
+    padding: var(--content-padding-top) var(--content-padding);
     border-right: solid var(--white) var(--border-width1);
     border-bottom: solid var(--white) var(--border-width1);
     border-top: solid var(--black) var(--border-width1);
@@ -196,7 +197,7 @@ c-window .content {
     flex-direction: row-reverse;
 }
 c-window .content .content-image {
-    width: 60%;
+    width: 30%;
 }
 c-window .content .content-image img{
     width: 100%;
