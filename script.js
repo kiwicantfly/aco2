@@ -131,7 +131,7 @@ const intro = document.getElementById("how-to-play");
 
 intro.setAttribute("enigme-mot",`Détermine ensuite le mot clé avec la deuxième devinette.
 </br></br>
-Pour obtenir <strong>10 BD</strong>, il faut dire la bon mot à la bonne personne.`);
+Pour obtenir <strong>10 BD</strong>, il faut dire le bon mot à la bonne personne.`);
 intro.setAttribute("enigme-personne-content", `Trouve le prénom d'une personne du mini mandat grâce à la première devinette.`);
 
 /*Remplissage aléatoire */
