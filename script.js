@@ -7,7 +7,7 @@
         "Pierre"
     "Simon":
         "Tu peux m'appeler Bob.",
-        "Une baguette"
+        105€
     "Sarah":
         "Je suis pas en cosplay, je m'habille juste comme ça.",
         "Une carte."
@@ -19,18 +19,24 @@
         "Milou"
     "Nathan B":
         "J'ai toujours été friendly surtout avec mes potes… Tard dans la nuit colorée, la situation peut vite déraper",
+        "Le silence"
     "Gustave":
         "Parler ? C'est plus qu'un soft skill, c'est une philosophie de vivre."
+        Le pied ou la bite
+    "Charlotte"
+        "J'ai un instinct de survie négatif"
+        "une baguette"
 */
 const enigmePersonne = [
     ["Non c'est pas moi le blond, c'est l'autre.", "fred.png", "Je suis la seule chose où aujourd'hui arrive avant hier, que suis-je ?"],
     ["À cause du rouge et du livre, j'ai confondu avec le BDA...", "bda.png", "Les parents de Pierre ont trois enfants, Paul et Bill : quel est le nom du troisième enfant ?"],
-    ["Tu peux m'appeler Bob.", "bob.jpg", "Que demande un magicien en boulangerie ?"],
+    ["Tu peux m'appeler Bob.", "bob.jpg", "Un smartphone et sa coque coûtent 110 euros en tout. Le smartphone coûte 100 euros de plus que la coque. Combien coûte le smartphone ?"],
     ["Je suis pas en cosplay, je m'habille juste comme ça.", "cosplay.png", "Où peut-on trouver des villes, des rues, des magasins mais pas de gens ?"],
     ["Oui j'ai encore changé de couleur de cheveux...", "rainbow.png", "Qu’est-ce qu’on doit casser pour pouvoir l’utiliser ?"],
     ["Boire n'est pas qu'une passion, c'est une profession.", "boire.png", "Je suis Tintin mais je ne suis pas Tintin. Qui suis-je ?"],
-    ["J'ai toujours été friendly surtout avec mes potes… Tard dans la nuit colorée, la situation peut vite déraper.", "nuit.jpg", ""],
-    ["Parler ? C'est plus qu'un soft skill, c'est une philosophie de vivre.", "philo.png", ""]
+    ["J'ai toujours été friendly surtout avec mes potes… Tard dans la nuit colorée, la situation peut vite déraper.", "nuit.jpg", "Je disparais dès que l'on prononce mon nom."],
+    ["Parler ? C'est plus qu'un soft skill, c'est une philosophie de vivre.", "philo.png", "Quand je suis debout, il est couché, quand je suis couché, il est debout."],
+    ["J'ai un instinct de survie négatif.", "hamster.jpeg", "Que demande un magicien en boulangerie ?"]
 ]
 
 class Window extends HTMLElement {
@@ -135,10 +141,11 @@ for (let i=0; i<4; i++) {
     main.innerHTML += `
         <c-banner image="images/banners/banner${i+1}.png"></c-banner>
         <c-window id="window${2*i+1}" title="Enigme ${2*i+1}" enigme-personne-content="${suffleEnigmes[2*i][0]}" image="images/people/${suffleEnigmes[2*i][1]}" enigme-mot="${suffleEnigmes[2*i][2]}"></c-window>
-        <c-window id="window${2*(i+1)}" title="Enigme ${2*(i+1)}" class="reverse" enigme-personne-content="${suffleEnigmes[2*i+1][0]}" image="images/people/${suffleEnigmes[2*i+1][1]}" enigme-mot="${suffleEnigmes[2*i][2]}"></c-window>
+        <c-window id="window${2*(i+1)}" title="Enigme ${2*(i+1)}" class="reverse" enigme-personne-content="${suffleEnigmes[2*i+1][0]}" image="images/people/${suffleEnigmes[2*i+1][1]}" enigme-mot="${suffleEnigmes[2*i+1][2]}"></c-window>
     `
 }
 main.innerHTML += `<c-banner image="images/banners/banner5.png"></c-Banner>`;
+main.innerHTML += `<c-window id="window9" title="Enigme 9" enigme-personne-content="${suffleEnigmes[8][0]}" image="images/people/${suffleEnigmes[8][1]}" enigme-mot="${suffleEnigmes[8][2]}"></c-window>`
 main.innerHTML += `<p>Merci Paolo pour ton idée de génie.</p>`;
 
 
