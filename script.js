@@ -1,32 +1,3 @@
-/*
-    "Jason":
-        "Non c'est pas moi le blond, c'est l'autre."
-        "un dictionnaire"
-    "Amélie":
-        "À cause du rouge et du livre, j'ai confondu avec le BDA...",
-        "Pierre"
-    "Simon":
-        "Tu peux m'appeler Bob.",
-        105€
-    "Sarah":
-        "Je suis pas en cosplay, je m'habille juste comme ça.",
-        "Une carte."
-    "Anna":
-        "Oui j'ai encore changé de couleur de cheveux...",
-        "Un oeuf"
-    "Hugo":
-        "Boire n'est pas qu'une passion, c'est une profession.",
-        "Milou"
-    "Nathan B":
-        "J'ai toujours été friendly surtout avec mes potes… Tard dans la nuit colorée, la situation peut vite déraper",
-        "Le silence"
-    "Gustave":
-        "Parler ? C'est plus qu'un soft skill, c'est une philosophie de vivre."
-        Le pied ou la bite
-    "Charlotte"
-        "J'ai un instinct de survie négatif"
-        "une baguette"
-*/
 const enigmePersonne = [
     ["Non c'est pas moi le blond, c'est l'autre.", "fred.png", "Je suis la seule chose où aujourd'hui arrive avant hier, que suis-je ?"],
     ["À cause du rouge et du livre, j'ai confondu avec le BDA...", "bda.png", "Les parents de Pierre ont trois enfants, Paul et Bill : quel est le nom du troisième enfant ?"],
@@ -165,5 +136,5 @@ for (let i=0; i<popupImages.length; i++) {
             },
             500
         )
-    }, 30000*i+10000);
+    }, 10000*i+5000);
 };
