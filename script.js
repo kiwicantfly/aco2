@@ -1,45 +1,59 @@
-const enigmePersonne0 = {
-    "Jason":"Non c'est pas moi le blond, c'est l'autre.",
-    "Amélie":"À cause du rouge et du livre, j'ai confondu avec le BDA...",
-    "Simon":"Tu peux m'appeler Bob.",
-    "Sarah":"Je suis pas en cosplay, je m'habille juste comme ça.",
-    "Anna":"Oui j'ai encore changé de couleur de cheveux...",
-    "Hugo":"Boire n'est pas qu'une passion, c'est une profession.",
-    "Nathan B":"J'ai toujours été friendly surtout avec mes potes… Tard dans la nuit colorée, la situation peut vite déraper",
-    "Gustave":"Parler ? C'est plus qu'un soft skill, c'est une philosophie de vivre."
-}
-
+/*
+    "Jason":
+        "Non c'est pas moi le blond, c'est l'autre."
+        "un dictionnaire"
+    "Amélie":
+        "À cause du rouge et du livre, j'ai confondu avec le BDA...",
+        "Pierre"
+    "Simon":
+        "Tu peux m'appeler Bob.",
+        "Une baguette"
+    "Sarah":
+        "Je suis pas en cosplay, je m'habille juste comme ça.",
+        "Une carte."
+    "Anna":
+        "Oui j'ai encore changé de couleur de cheveux...",
+        "Un oeuf"
+    "Hugo":
+        "Boire n'est pas qu'une passion, c'est une profession.",
+        "Milou"
+    "Nathan B":
+        "J'ai toujours été friendly surtout avec mes potes… Tard dans la nuit colorée, la situation peut vite déraper",
+    "Gustave":
+        "Parler ? C'est plus qu'un soft skill, c'est une philosophie de vivre."
+*/
 const enigmePersonne = [
-    ["Non c'est pas moi le blond, c'est l'autre.", "fred.png"],
-    ["À cause du rouge et du livre, j'ai confondu avec le BDA...", "bda.png"],
-    ["Tu peux m'appeler Bob.", "bob.jpg"],
-    ["Je suis pas en cosplay, je m'habille juste comme ça.", "cosplay.png"],
-    ["Oui j'ai encore changé de couleur de cheveux...", "rainbow.png"],
-    ["Boire n'est pas qu'une passion, c'est une profession.", "boire.png"],
-    ["J'ai toujours été friendly surtout avec mes potes… Tard dans la nuit colorée, la situation peut vite déraper.", "nuit.jpg"],
-    ["Parler ? C'est plus qu'un soft skill, c'est une philosophie de vivre.", "philo.png"]
+    ["Non c'est pas moi le blond, c'est l'autre.", "fred.png", "Je suis la seule chose où aujourd'hui arrive avant hier, que suis-je ?"],
+    ["À cause du rouge et du livre, j'ai confondu avec le BDA...", "bda.png", "Les parents de Pierre ont trois enfants, Paul et Bill : quel est le nom du troisième enfant ?"],
+    ["Tu peux m'appeler Bob.", "bob.jpg", "Que demande un magicien en boulangerie ?"],
+    ["Je suis pas en cosplay, je m'habille juste comme ça.", "cosplay.png", "Où peut-on trouver des villes, des rues, des magasins mais pas de gens ?"],
+    ["Oui j'ai encore changé de couleur de cheveux...", "rainbow.png", "Qu’est-ce qu’on doit casser pour pouvoir l’utiliser ?"],
+    ["Boire n'est pas qu'une passion, c'est une profession.", "boire.png", "Je suis Tintin mais je ne suis pas Tintin. Qui suis-je ?"],
+    ["J'ai toujours été friendly surtout avec mes potes… Tard dans la nuit colorée, la situation peut vite déraper.", "nuit.jpg", ""],
+    ["Parler ? C'est plus qu'un soft skill, c'est une philosophie de vivre.", "philo.png", ""]
 ]
 
 class Window extends HTMLElement {
     connectedCallback() {
         const image = this.getAttribute("image");
-        const numero = this.getAttribute("numero") || 0;
-        const enigmePersonneContent = this.getAttribute("enigme-personne-content");
+        const title = this.getAttribute("title") || "Enigme";
+        const enigmePersonneContent = this.getAttribute("enigme-personne-content") || "Boris";
+        const enigmeMot = this.getAttribute("enigme-mot") || "Boris";
         this.innerHTML = `
             <div class="top" style="text-align: right;">
-                <div>Enigme ${numero}</div>
+                <div>${title}</div>
                 <div style="flex: 1; display: flex; flex-direction: row-reverse; align-items: center">
                     <button style="display: flex; justify-content: center; align-items: center" class="close-button"><span style="font-family: monospace">×</span></button>
                 </div>
             </div>
-            <div class="content">
+            <div class="content-img content">
                 <div class="content-image">
                     <img src="${image}"/>
                 </div>
                 <div class="content-text">${enigmePersonneContent}</div>
             </div>
             <div class="content" style="padding-top: 0; border-top: none; border-left: solid black 1px;">
-                <div class="content-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                <div class="content-text">${enigmeMot}</div>
             </div>
             <div class="bottom">
                 <div class="bottom-box bottom-left">© 2025 ACO2.com</div>
@@ -106,7 +120,13 @@ const shuffle = (array) => {
     return array; 
   }; 
 
+  /* Comment jouer */
+const intro = document.getElementById("how-to-play");
 
+intro.setAttribute("enigme-mot",`Détermine ensuite le mot clé avec la deuxième devinette.
+</br></br>
+Pour obtenir <strong>10 BD</strong>, il faut dire la bon mot à la bonne personne.`);
+intro.setAttribute("enigme-personne-content", `Trouve le prénom d'une personne du mini mandat grâce à la première devinette.`);
 
 /*Remplissage aléatoire */
 const main = document.getElementById("main");
@@ -114,8 +134,8 @@ const suffleEnigmes = shuffle(enigmePersonne);
 for (let i=0; i<4; i++) {
     main.innerHTML += `
         <c-banner image="images/banners/banner${i+1}.png"></c-banner>
-        <c-window id="window${2*i+1}" numero="${2*i+1}" enigme-personne-content="${suffleEnigmes[2*i][0]}" image="images/people/${suffleEnigmes[2*i][1]}"></c-window>
-        <c-window id="window${2*(i+1)}" numero="${2*(i+1)}" class="reverse" enigme-personne-content="${suffleEnigmes[2*i+1][0]}" image="images/people/${suffleEnigmes[2*i+1][1]}"></c-window>
+        <c-window id="window${2*i+1}" title="Enigme ${2*i+1}" enigme-personne-content="${suffleEnigmes[2*i][0]}" image="images/people/${suffleEnigmes[2*i][1]}" enigme-mot="${suffleEnigmes[2*i][2]}"></c-window>
+        <c-window id="window${2*(i+1)}" title="Enigme ${2*(i+1)}" class="reverse" enigme-personne-content="${suffleEnigmes[2*i+1][0]}" image="images/people/${suffleEnigmes[2*i+1][1]}" enigme-mot="${suffleEnigmes[2*i][2]}"></c-window>
     `
 }
 main.innerHTML += `<c-banner image="images/banners/banner5.png"></c-Banner>`;

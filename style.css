@@ -196,7 +196,7 @@ c-window .content {
     justify-content: space-between;
     align-items: center;
 }
-.reverse .content {
+.reverse .content-img {
     flex-direction: row-reverse;
 }
 c-window .content .content-image {
