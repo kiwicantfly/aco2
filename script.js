@@ -121,7 +121,7 @@ main.innerHTML += `<p>Merci Paolo pour ton idée de génie.</p>`;
 
 
 /* Apparition des popup toutes les 20s */
-const popupImagesInitial = ['pill.png', 'virus.png', 'winner.png', 'ritz.png', 'github.png'];
+const popupImagesInitial = ['virus.png', 'winner.png', 'ritz.png']; //'pill.png', 'github.png'
 const popupImages = shuffle(popupImagesInitial);
 const popup = document.getElementById("popup");
 
